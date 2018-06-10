@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie-edge">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'GestionConvocatoria/css/bootstrap.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'GestionConvocatoria/css/style.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body class="seleccion">
+	<div class="container-fluid" id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<!--<button class="button" onclick="regresar()">Regresar</button>-->
+					<a href="{% url 'index' %}">Regresar</a>
+				</div>
+			</div>
+		</div>
+	</div >
+	<section class="container-fluid" id="box-convocatorias-info">
+		<div class="container">
+			<div class="row box_2">
+				<h3>Convocatoria</h3>
+				<table class="table table-bordered table-responsive table-hover col-lg-4">
+					<tbody>
+						<tr>
+							<td>Nomenclatura</td>
+							<td class="relleno">{{ convocatorias.Nomenclatura }}</td>
+						</tr>
+							<tr>
+							<td>N° de Convocatoria</td>
+							<td class="relleno">{{ convocatorias.NroConv }}</td>
+						</tr>
+							<tr>
+							<td>Descripción</td>
+							<td class="relleno">{{ convocatorias.DescObjeto }}</td>
+						</tr>
+						</tr>
+							<tr>
+							<td>Código SNIP</td>
+							<td class="relleno">{{ convocatorias.CodSNIP }}</td>
+						</tr>
+						</tr>
+							<tr>
+							<td>Documentación</td>
+							<td class="relleno">{{ convocatorias.RutaDoc }}</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="box_2">
+					<h3 class="rebelde">Cronograma</h3>
+					<table class="table table-bordered table-responsive table-hover offset-lg-2 col-lg-5">
+						<thead>
+								<tr>
+									<th>Etapa</th>
+								  <th>Descripción</th>
+								</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Convocatoria</td>
+								<td class="relleno3">{{ convocatorias.FecPubli }}</td>
+							</tr>
+								<tr>
+								<td>Otrogamiento de la buena pro</td>
+								<td class="relleno3">{{ convocatorias.FecBuenaPro }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row box_2">
+				<h3>Informacion general de la Entidad</h3>
+				<table class="table table-bordered table-responsive table-hover col-lg-4">
+					<tbody>
+						<tr>
+							<td>Nombre Entidad</td>
+							<td class="relleno2"></td>
+						</tr>
+							<tr>
+							<td>RUC</td>
+							<td class="relleno2"></td>
+						</tr>
+							<tr>
+							<td>Sector</td>
+							<td class="relleno2"></td>
+						</tr>
+						</tr>
+							<tr>
+							<td>Vigente</td>
+							<td class="relleno2"></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="box_2">
+					<h3 class="rebelde">Informacion general del Procedimiento</h3>
+					<table class="table table-bordered table-responsive table-hover offset-lg-2 col-lg-4">
+						<tbody>
+							<tr>
+								<td>Objeto de Contratación</td>
+								<td class="relleno">{{ convocatorias.CodObjC }}</td>
+							</tr>
+								<tr>
+								<td>Valor Referencial</td>
+								<td class="relleno">{{ convocatorias.ValRefer }}</td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
