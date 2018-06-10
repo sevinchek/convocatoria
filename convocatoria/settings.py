@@ -105,5 +105,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 # STATIC_URL solo para PC jala desde static de STATIC_ROOT y STATIC_ROOT para Web
-STATIC_URL = '/static/GestionConvocatoria/'
-#STATIC_ROOT = 'home/punkevin/convocatoria/GestionConvocatoria/static/GestionConvocatoria'
+STATIC_URL = '/static/'
+STATIC_ROOT = 'GestionConvocatoria/static/'
