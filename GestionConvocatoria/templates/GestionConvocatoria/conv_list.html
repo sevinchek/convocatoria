@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
 	<title></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/bootstrap.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/style.css' %}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
@@ -16,7 +17,7 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
   </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<header class="container-fluid">
@@ -101,125 +102,25 @@
 									<th>Ver Personal</th>
 								</thead>
 								<tbody>
+									{% for conv in convocatorias%}
 									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
+										<td>{{ conv.NroConv }}</td>
+										<td>{{ conv.CodCli.CodCli.DesPersona }}</td>
+										<td>{{ conv.FecPubli }}</td>
+										<td>{{ conv.FecBuenaPro }}</td>
+										<td>{{ conv.Nomenclatura }}</td>
+										<td>{{ conv.FecReinicio }}</td>
+										<td>{{ conv.DescObjeto }}</td>
+										<td>{{ conv.CodSNIP }}</td>
+										<td>{{ conv.ValRefer }}</td>
 										<td>
-											<a href="{% url 'conv_detail' pk=conv.pk %}"><i class="far fa-list-alt"></i></a>
+											<a href="{% url 'conv_detail' pk=conv.pk %}" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
 										</td>
 										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-users"></i></a
+											<a href="#ver-personal" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-users"></i></a
 										</td>
 									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#resul-conv" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-users"></i></a
-										</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-users"></i></a
-										</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-users"></i></a
-										</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-users"></i></a
-										</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-users"></i></a
-										</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-										<td>
-											<a href="#" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-users"></i></a
-										</td>
-									</tr>
+									{% endfor %}
 								</tbody>
 							</table>
 							</div>
@@ -246,7 +147,13 @@
 										<div class="form-row  ">
 											<div class="form-group col-lg-6">
 												<label class="mr-sm-2" for="inlineFormCustomSelect">Cod Cliente</label>
-												<input type="text" class="form-control" id="inlineFormCustomSelect">
+												<!--<input type="text" class="form-control" id="inlineFormCustomSelect">-->
+												<select class="form-control">
+												<!--<option selected="selected" disabled="true">Choose Tagging</option>-->
+												 {% for cli in clientes%}
+												 <option value="{{ cli.CodCli.CodPers }}">{{ cli.CodCli.CodPers }}</option>
+												 {% endfor %}
+												</select>
 											</div>
 											<div class="form-group  col-lg-6 ">
 												<label for="inputMouth_c">Descripción Objeto</label>
@@ -254,7 +161,7 @@
 											</div>
 											<div class="form-group col-lg-5">
 												<label for="Cod_Personal">Fecha Publicacion</label>
-												<input type="text" class="form-control" id="Cod_Personal">
+												<input type="date" class="form-control" id="Cod_Personal">
 											</div>
 											<div class="col-lg-1 conte-iconos">
 												<i class="far fa-calendar-alt"></i>
@@ -265,7 +172,7 @@
 											</div>
 											<div class="col-lg-5 ">
 												<label for="inputDay_c">Fecha Buena Pro</label>
-												<input type="text" class="form-control" id="inputDay_c"></input>
+												<input type="date" class="form-control" id="inputDay_c"></input>
 											</div>
 											<div class="col-lg-1 conte-iconos">
 												<i class="far fa-calendar-alt"></i>
@@ -284,14 +191,19 @@
 											</div>
 											<div class="form-group col-lg-5 ">
 												<label for="inputDay_c">Fecha Reinicio</label>
-												<input type="text" class="form-control" id="inputDay_c">
+												<input type="date" class="form-control" id="inputDay_c">
 											</div>
 											<div class="col-lg-1 conte-iconos">
 												<i class="far fa-calendar-alt"></i>
 											</div>
 											<div class="form-group col-lg-6  ">
 												<label for="inputDay_c">Codigo objeto</label>
-												<input type="text" class="form-control" id="inputDay_c">
+												<!--<input type="text" class="form-control" id="inputDay_c">-->
+												<select class="form-control">
+												 {% for objs in objcontrats%}
+												 <option value="{{ objs.CodObjC }}">{{ objs.CodObjC }}</option>
+												 {% endfor %}
+												</select>
 											</div>
 
 										</div>

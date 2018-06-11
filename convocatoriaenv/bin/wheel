@@ -1,5 +1,6 @@
-#!/home/felix/Desktop/convocatoria/convocatoriaenv/bin/python3.5
-
+#!/bin/sh
+'''exec' "/home/kevin/Desktop/Software 2/convocatoriaenv/bin/python3.5" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys

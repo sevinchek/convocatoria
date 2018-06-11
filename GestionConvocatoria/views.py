@@ -1,14 +1,18 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Convocatoria
+from .models import Cliente
+from .models import ObjContrat
 from .forms import ConvForm
 from django.shortcuts import redirect
 
 # Create your views here.
 
 def conv_list(request):
-    convocatorias = Convocatoria.objects.all()
-    return render(request, 'GestionConvocatoria/convocatoria.html', {'convocatorias': convocatorias})
+    convocatorias = Convocatoria.objects.select_related('CodCli')
+    clientes = Cliente.objects.select_related('CodCli')
+    objcontrats = ObjContrat.objects.all()
+    return render(request, 'GestionConvocatoria/conv_list.html', {'convocatorias': convocatorias, 'clientes': clientes, 'objcontrats': objcontrats})
 
 def conv_detail(request, pk):
     convocatorias = get_object_or_404(Convocatoria, pk=pk)

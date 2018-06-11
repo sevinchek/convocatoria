@@ -94,7 +94,7 @@ class PersProfesion(models.Model):
 
 
 class Convocatoria(models.Model):
-    NroConv = models.IntegerField(null=False, primary_key=True)
+    NroConv = models.AutoField(null=False, primary_key=True)
     CodCli = models.ForeignKey('Cliente', db_column='CodPers', on_delete=models.CASCADE, null=False)
     FecPubli = models.DateField(null=False)
     FecBuenaPro = models.DateField(null=False)
