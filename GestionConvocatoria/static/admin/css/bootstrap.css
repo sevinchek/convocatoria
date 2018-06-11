@@ -1713,7 +1713,7 @@ pre code {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #C8CFD6;
 }
 
 .table-hover tbody tr:hover {
@@ -6078,6 +6078,9 @@ button.close {
   background-color: #007bff !important;
 }
 
+.bg-orange {
+  background-color: #F9921A;
+}
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {

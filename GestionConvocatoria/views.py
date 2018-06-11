@@ -8,7 +8,7 @@ from django.shortcuts import redirect
 
 def conv_list(request):
     convocatorias = Convocatoria.objects.all()
-    return render(request, 'GestionConvocatoria/conv_list.html', {'convocatorias': convocatorias})
+    return render(request, 'GestionConvocatoria/convocatoria.html', {'convocatorias': convocatorias})
 
 def conv_detail(request, pk):
     convocatorias = get_object_or_404(Convocatoria, pk=pk)
