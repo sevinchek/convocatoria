@@ -1,221 +1,231 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
 	<title></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
-	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/bootstrap.css' %}">
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<header class="container-fluid">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<nav>
-						<ul>
-							<li><a href="">Proyectos</a></li>
-							<li ><a href="" class="active">Convocatioria</a></li>
-							<li><a href="">Personal</a></li>
-							<li><a href="">Consultas</a></li>
-							<li><a href="">Ayuda</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
-	<section class="container-fluid" id="box-personal">
-		<div class="container">
-			<div class="row box">
-				<div class="col-lg-12 contenido_2">
-					<div class="row">
-						<div class="col-lg-12 relative">
-							<h2>Personal</h2>
-							<table class="table table-striped table-bordered table-responsive table-hover col-lg-12">
-								<thead>
-									<th>Código</th>
-									<th>Descripción</th>
-									<th>Tipo de Persona</th>
-									<th>Profesión</th>
-									<th>Cargo</th>
-									<th>DNI	</th>
-								</thead>
-								<tbody>
-									<tr>
-										<td>AS-SM-1-2018</td>
-										<td>En esta parte se pone alguna descripcion n</td>
-										<td>Aca algun tipo de persona creo o algo mas o nose  </td>
-										<td>Ingeniería de Sist</td>
-										<td>Obra</td>
-										<td>98425448</td>
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/bootstrap.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/style.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- JS code -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 
-									</tr>
-									<tr>
-										<td>AS-SM-1-2018</td>
-										<td>21/05/18</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Obra</td>
-										<td>98425448</td>
-									</tr>
-									<tr>
-										<td>AS-SM-1-2018</td>
-										<td>21/05/18</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Obra</td>
-										<td>98425448</td>
-									</tr>
-									<tr>
-										<td>AS-SM-1-2018</td>
-										<td>21/05/18</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Obra</td>
-										<td>98425448</td>
-									</tr>
-									<tr>
-										<td>AS-SM-1-2018</td>
-										<td>21/05/18</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Obra</td>
-										<td>98425448</td>
-									</tr>
-									<tr>
-										<td>AS-SM-1-2018</td>
-										<td>21/05/18</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Obra</td>
-										<td>98425448</td>
-									</tr>
-									<tr>
-										<td>AS-SM-1-2018</td>
-										<td>21/05/18</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Obra</td>
-										<td>98425448</td>
-									</tr>
-								</tbody>
-							</table>
+</head>
+
+
+
+
+
+		<!--VER PERSONAL -->
+
+		<div class="modal fade" id="ver-personal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid" id="form">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-12 form-group" text-center>
+										<h5>VER PERSONAL</h5>
+									</div>
+
+									<div class="row">
+
+										<div class="col-lg-4 form-group" >
+											<label for="inputDay_c">CONVOCATORIA Nro:</label>
+										</div>
+										<div class="col-lg-3 form-group">
+											<input type="text" class="form-control" id="inputDay_c" placeholder="01"></input>
+										</div>
+										<div class="col-lg-3 form-group text-right">
+											<label for="inputMounth">AÑADIR NVO PERSONAL</label>
+											<a class="icono" href="#nuevo-pers" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-plus-circle"></i></a>
+										</div>
+									</div>
+
+
+
+
+
+
+									<table class="table table-striped table-responsive">
+										<style>
+											thead th {
+												color: #fff;
+											}
+										</style>
+										<thead class="table-success bg-orange">
+											<th>Cod Personal</th>
+											<th>Nombre Personal</th>
+											<th>Profesión</th>
+											<th>Cargo</th>
+											<th>Experiencia Meses</th>
+											<th>Experiencia Dias</th>
+											<th>CIP</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1234</td>
+												<td>Renzo</td>
+												<td>Ing de Sistemas</td>
+												<td>Soporte Técnico</td>
+												<td>16 meses</td>
+												<td>275 Dias</td>
+												<td>ART-25</td>
+											</tr>
+											<tr>
+												<td>1234</td>
+												<td>Renzo</td>
+												<td>Ing de Sistemas</td>
+												<td>Soporte Técnico</td>
+												<td>16 meses</td>
+												<td>275 Dias</td>
+												<td>ART-25</td>
+											</tr>
+											<tr>
+												<td>1234</td>
+												<td>Renzo</td>
+												<td>Ing de Sistemas</td>
+												<td>Soporte Técnico</td>
+												<td>16 meses</td>
+												<td>275 Dias</td>
+												<td>ART-25</td>
+											</tr>
+											<tr>
+												<td>1234</td>
+												<td>Renzo</td>
+												<td>Ing de Sistemas</td>
+												<td>Soporte Técnico</td>
+												<td>16 meses</td>
+												<td>275 Dias</td>
+												<td>ART-25</td>
+											</tr>
+											<tr>
+												<td>1234</td>
+												<td>Renzo</td>
+												<td>Ing de Sistemas</td>
+												<td>Soporte Técnico</td>
+												<td>16 meses</td>
+												<td>275 Dias</td>
+												<td>ART-25</td>
+											</tr>
+											<tr>
+												<td>1234</td>
+												<td>Renzo</td>
+												<td>Ing de Sistemas</td>
+												<td>Soporte Técnico</td>
+												<td>16 meses</td>
+												<td>275 Dias</td>
+												<td>ART-25</td>
+											</tr>
+											<tr>
+												<td>1234</td>
+												<td>Renzo</td>
+												<td>Ing de Sistemas</td>
+												<td>Soporte Técnico</td>
+												<td>16 meses</td>
+												<td>275 Dias</td>
+												<td>ART-25</td>
+											</tr>
+										</tbody>
+									</table>
+									</form>
+								</div>
+							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-	</section>
-	<section class="container-fluid" id="form">
-		<div class="container">
-			<div class="row">
-				<h2>Datos Generales del Personal para la Convocatoria</h2>
-				<div class="col-lg-12 contenido_3">
-					<form class="form">
-						  <div class="form-row ">
-						    <div class="form-group col-lg-3">
-						      <label class="mr-sm-2" for="inlineFormCustomSelect">Num. Convocatoria</label>
-						      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-						        <option selected>-Seleccione-</option>
-						        <option value="1">1</option>
-						        <option value="2">2</option>
-						        <option value="3">3</option>
-						      </select>
-						    </div>
+		</div>
 
-							<div class="form-group offset-lg-5 col-md-3 ">
-							      <label for="inputMouth_c">Meses</label>
-							      <select id="inputMouth_c" class="form-control">
-							        <option selected>-Seleccione-</option>
-							        <option selected>1</option>
-							        <option selected>2</option>
-							        <option selected>3</option>
-							        <option selected>4</option>
-							        <option selected>5</option>
-							      </select>
-							  </div>
-						    <div class="form-group col-lg-3">
-							    <label for="Cod_Personal">Codigo Personal</label>
-							    <input type="text" class="form-control" id="Cod_Personal" placeholder="255949" >
-						  	</div>
-						  	  <fieldset class="form-group offset-lg-1 col-lg-3">
-							    <div class="row">
-							      <legend class="col-form-label col-sm-4 pt-0">Experiencia</legend>
-							      <div class="col-sm-8">
-							        <div class="form-check">
-							          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-							          <label class="form-check-label" for="gridRadios1">
-							            Si
-							          </label>
-							        </div>
-							        <div class="form-check">
-							          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-							          <label class="form-check-label" for="gridRadios2">
-							            No
-							          </label>
-							        </div>
-							      </div>
-							    </div>
-							  </fieldset>
-								<div class="form-group offset-lg-1 col-md-3 ">
-							      <label for="inputDay_c">Días:</label>
-							      <select id="inputDay	_c" class="form-control">
-							        <option selected>-Seleccione-</option>
-							        <option selected>1</option>
-							        <option selected>2</option>
-							        <option selected>3</option>
-							        <option selected>4</option>
-							        <option selected>5</option>
-							      </select>
-							    </div>
-							<div class="form-group col-md-3 ">
-							      <label for="inputDay_c">Cargo:</label>
-							      <select id="inputDay	_c" class="form-control">
-							        <option selected>-Seleccione-</option>
-							        <option selected>Obra</option>
-							      </select>
-							    </div>
- 							<div class="form-group col-md-3 ">
-							      <label for="inputDay_c">Vigencia:</label>
-							      <select id="inputDay	_c" class="form-control">
-							        <option selected>-Seleccione-</option>
-							        <option selected>Caducado</option>
-							      </select>
-						    </div>
-						   </div>
-						      <div class="form-row align-items-center">
-						      	<div class="col-lg-2">
-						      		<label  for="inlineFormInput">Carrera Profesional :</label>
-						      	</div>
-								<div class="col-lg-4">
-								  <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Ingeniería">
-								</div>
-								<div class="col-lg-3">
-								  <label class="sr-only" for="inlineFormInputGroup">Username</label>
-								  <div class="input-group mb-2">
-								    <div class="input-group-prepend">
-								      <div class="input-group-text">@</div>
-								    </div>
-								    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Correo">
-								  </div>
+		<!--FIN VER PERSONAL  -->
+
+
+    <!-- NUEVO PERSONAL-->
+
+
+		<div class="modal fade" id="nuevo-pers" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+					</div>
+					<div class="modal-body">
+						<section class="container-fluid" id="form">
+							<div class="container">
+								<div class="row">
+									<h2>NUEVO PERSONAL</h2>
+									<div class="col-lg-12 contenido_3">
+										<form class="form">
+											<div class="form-row ">
+												<div class="form-group col-lg-3">
+													<label for="Cod_Personal">Codigo Personal</label>
+													<input type="text" class="form-control" id="Cod_Personal">
+												</div>
+												<div class="form-group  col-lg-3 ">
+													<label for="inputDay_c">Carrera Profesional:</label>
+													<input type="text" class="form-control" id="inputDay_c">
+												</div>
+												<div class="form-group col-lg-3 ">
+													<label for="inputDay_c">Num convocatoria:</label>
+													<input type="text" class="form-control" id="inputDay_c">
+												</div>
+												<div class="form-group col-lg-3  ">
+													<label for="inputDay_c">CIP:</label>
+													<input type="text" class="form-control" id="inputDay_c">
+												</div>
+												<div class="col-lg-4  ">
+													<label for="inputDay_c">Cod Cargo:</label>
+													<input type="text" class="form-control" id="inputDay_c">
+												</div>
+												<div class="col-lg-4  ">
+													<label for="inputDay_c">Exp Num. Meses:</label>
+													<input type="text" class="form-control" id="inputDay_c">
+												</div>
+												<div class="col-lg-4  ">
+													<label for="inputDay_c">Exp. Num Dias:</label>
+													<input type="text" class="form-control" id="inputDay_c">
+												</div>
+												<div class="col-lg-4">
+													<div class="form-row align-items-center">
+														<div class="col-lg-7">
+															<label for="inlineFormInput">Experiencia :</label>
+														</div>
+														<div class="col-lg-6">
+															<textarea name="" id="" cols="60" rows="5"></textarea>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="row ">
+												<div class="col-lg-12 text-right">
+													<button>Guardar</button>
+													<button>Nuevo</button>
+												</div>
+											</div>
+									</div>
+									</form>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-lg-12 text-right">
-									<button>Buscar</button>
-									<button>Guardar</button>
-									<button>Nuevo</button>
-								</div>
 							</div>
-						  </div>
-					</form>
+						</section>
+					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+		</div>
 
-</body>
-</html>
+		<!-- FIN NUEVO PERSONAL -->
