@@ -143,75 +143,65 @@
 							<div class="row">
 								<h5>Registrar nueva convocatoria</h5>
 								<div class="col-lg-12 contenido_3">
-									<form class="form">
+									<form method="POST" class="post-form">
+										{% csrf_token %}
 										<div class="form-row  ">
-											<div class="form-group col-lg-6">
+											<div class="form-group col-lg-4">
 												<label class="mr-sm-2" for="inlineFormCustomSelect">Cod Cliente</label>
-												<!--<input type="text" class="form-control" id="inlineFormCustomSelect">-->
-												<select class="form-control">
-												<!--<option selected="selected" disabled="true">Choose Tagging</option>-->
-												 {% for cli in clientes%}
-												 <option value="{{ cli.CodCli.CodPers }}">{{ cli.CodCli.CodPers }}</option>
-												 {% endfor %}
-												</select>
+												{{ form.CodCli }}
 											</div>
 											<div class="form-group  col-lg-6 ">
 												<label for="inputMouth_c">Descripción Objeto</label>
-												<input type="text" class="form-control" id="inputMouth_c">
+												{{ form.DescObjeto }}
 											</div>
 											<div class="form-group col-lg-5">
 												<label for="Cod_Personal">Fecha Publicacion</label>
-												<input type="date" class="form-control" id="Cod_Personal">
+												{{ form.FecPubli }}
 											</div>
 											<div class="col-lg-1 conte-iconos">
 												<i class="far fa-calendar-alt"></i>
 											</div>
 											<div class="form-group  col-lg-6 ">
 												<label for="inputDay_c">Código SNIP</label>
-												<input type="text" class="form-control" id="inputDay_c">
+												{{ form.CodSNIP }}
 											</div>
 											<div class="col-lg-5 ">
 												<label for="inputDay_c">Fecha Buena Pro</label>
-												<input type="date" class="form-control" id="inputDay_c"></input>
+												{{ form.FecBuenaPro }}
 											</div>
 											<div class="col-lg-1 conte-iconos">
 												<i class="far fa-calendar-alt"></i>
 											</div>
 											<div class="form-group col-lg-6  ">
 												<label for="inputDay_c">Valor Referencial</label>
-												<input type="text" class="form-control" id="inputDay_c">
+												{{ form.ValRefer }}
 											</div>
 											<div class="form-group col-lg-6 ">
 												<label for="inputDay_c">Nomenclatura</label>
-												<input type="text" class="form-control" id="inputDay_c">
+												{{ form.Nomenclatura }}
 											</div>
 											<div class="form-group col-lg-6  ">
 												<label for="inputDay_c">Ruta Doc</label>
-												<input type="text" class="form-control" id="inputDay_c">
+												{{ form.RutaDoc }}
 											</div>
 											<div class="form-group col-lg-5 ">
 												<label for="inputDay_c">Fecha Reinicio</label>
-												<input type="date" class="form-control" id="inputDay_c">
+												{{ form.FecReinicio }}
 											</div>
 											<div class="col-lg-1 conte-iconos">
 												<i class="far fa-calendar-alt"></i>
 											</div>
 											<div class="form-group col-lg-6  ">
 												<label for="inputDay_c">Codigo objeto</label>
-												<!--<input type="text" class="form-control" id="inputDay_c">-->
-												<select class="form-control">
-												 {% for objs in objcontrats%}
-												 <option value="{{ objs.CodObjC }}">{{ objs.CodObjC }}</option>
-												 {% endfor %}
-												</select>
+												{{ form.CodObjC }}
 											</div>
 
 										</div>
 										<div class="row ">
 											<div class="col-lg-12 text-right">
-												<button>Buscar</button>
-												<button>Guardar</button>
-												<button>Nuevo</button>
+
+												<button type="submit" class="save btn btn-default">Guardar</button>
+
 											</div>
 										</div>
 								</div>

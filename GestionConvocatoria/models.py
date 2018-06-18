@@ -11,7 +11,7 @@ class Profesiones(models.Model):
 #    def __str__(self):
 #        return self.NroConv
     def __str__(self):
-        return 'Profesiones: {} {} {} {} {} '.format(self.CodProf, self.Grado, self.DesProf, self.Vigente, self.Nomenclatura)
+        return str(self.CodProf)
 
 
 class Persona(models.Model):
@@ -39,7 +39,7 @@ class Persona(models.Model):
 #    def __str__(self):
 #        return self.NroConv
     def __str__(self):
-        return 'Persona: {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} '.format(self.CodPers, self.TipPersona, self.DesPersona, self.DesCorta, self.FlgCli, self.FlgEmplInt, self.FlgEExt, self.Direcc, self.CodDpto, self.CodProv, self.CodDist, self.Hobby, self.Foto, self.FecNac, self.DNI, self.DescLicCond, self.FecVigLC, self.Observac, self.RutaDoc, self.Vigente)
+        return str(self.CodPers)
 
 
 class Cargo(models.Model):
@@ -51,7 +51,7 @@ class Cargo(models.Model):
 #    def __str__(self):
 #        return self.NroConv
     def __str__(self):
-        return 'Cargo: {} {} {} {} '.format(self.CodCargo, self.DesCargo, self.FlgMiEmpresa, self.Vigencia)
+        return str(self.CodCargo)
 
 
 class ObjContrat(models.Model):
@@ -62,7 +62,7 @@ class ObjContrat(models.Model):
 #    def __str__(self):
 #        return self.NroConv
     def __str__(self):
-        return 'Objeto Contrato: {} {} {} '.format(self.CodObjC, self.DescObjeto, self.Vigente)
+        return str(self.CodObjC)
 
 
 class Cliente(models.Model):
@@ -75,7 +75,7 @@ class Cliente(models.Model):
 #    def __str__(self):
 #        return self.NroConv
     def __str__(self):
-        return 'Cliente: {} {} {} {} {} '.format(self.CodCli, self.CodSector, self.NroRuc, self.GerGral, self.Vigente)
+        return str(self.CodCli.DesPersona)
 
 
 class PersProfesion(models.Model):
@@ -90,7 +90,7 @@ class PersProfesion(models.Model):
 #    def __str__(self):
 #        return self.NroConv
     def __str__(self):
-        return 'Persona Profesion: {} {} {} {} {} {} {} '.format(self.CodPers, self.CorrProf, self.CodProf, self.CodCentEst, self.NroCIP, self.FecCIPVig, self.Vigente)
+        return str(self.CorrProf)
 
 
 class Convocatoria(models.Model):
@@ -109,11 +109,11 @@ class Convocatoria(models.Model):
 #    def __str__(self):
 #        return self.NroConv
     def __str__(self):
-        return 'Convocatoria: {} {} {} {} {} {} {} {} {} {} {} '.format(self.NroConv, self.CodCli, self.FecPubli, self.FecBuenaPro, self.Nomenclatura, self.FecReinicio, self.CodObjC, self.DescObjeto, self.CodSNIP, self.ValRefer, self.RutaDoc)
+        return str(self.NroConv)
 
 
 class ResulConv(models.Model):
-    NroConv = models.OneToOneField('Convocatoria', db_column='NroConv', on_delete=models.CASCADE,null=False)
+    NroConv = models.ForeignKey('Convocatoria', db_column='NroConv', on_delete=models.CASCADE,null=False)
     CorrConv = models.IntegerField(null=False, primary_key=True)
     Empresa = models.CharField(null=False, max_length=200)
     FlgGana = models.CharField(null=False, max_length=1)
@@ -124,7 +124,7 @@ class ResulConv(models.Model):
 #    def __str__(self):
 #        return self.CorrConv
     def __str__(self):
-        return 'Resultado Convocatoria: {} {} {} {} {} {} '.format(self.CorrConv, self.Empresa, self.FlgGana, self.EvalTec, self.EvalEcon, self.Observac)
+        return str(self.CorrConv)
 
 
 class ConvPers(models.Model):
@@ -138,4 +138,4 @@ class ConvPers(models.Model):
     FlgCIPVigen = models.IntegerField(null=False)
 
     def __str__(self):
-        return 'Convocatoria Persona: {} {} {} {} {} {} {} '.format(self.CodPers, self.CodCargo, self.Experiencia, self.ExpNroMeses, self.ExpNroDias, self.CorrProf, self.FlgCIPVigen)
+        return str(self.NroConv)

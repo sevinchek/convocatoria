@@ -12,7 +12,15 @@ def conv_list(request):
     convocatorias = Convocatoria.objects.select_related('CodCli')
     clientes = Cliente.objects.select_related('CodCli')
     objcontrats = ObjContrat.objects.all()
-    return render(request, 'GestionConvocatoria/conv_list.html', {'convocatorias': convocatorias, 'clientes': clientes, 'objcontrats': objcontrats})
+    if request.method == "POST":
+        form = ConvForm(request.POST)
+        if form.is_valid():
+                conv = form.save(commit=False)
+                conv.save()
+                return redirect('index')
+    else:
+        form = ConvForm()
+    return render(request, 'GestionConvocatoria/conv_list.html', {'convocatorias': convocatorias, 'clientes': clientes, 'objcontrats': objcontrats, 'form': form})
 
 def conv_detail(request, pk):
     convocatorias = get_object_or_404(Convocatoria, pk=pk)
