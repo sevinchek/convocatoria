@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import Convocatoria
 from .models import Cliente
 from .models import ObjContrat
+from .models import ResulConv
 from .forms import ConvForm
 from django.shortcuts import redirect
 
@@ -23,8 +24,16 @@ def conv_list(request):
     return render(request, 'GestionConvocatoria/conv_list.html', {'convocatorias': convocatorias, 'clientes': clientes, 'objcontrats': objcontrats, 'form': form})
 
 def conv_detail(request, pk):
-    convocatorias = get_object_or_404(Convocatoria, pk=pk)
-    return render(request, 'GestionConvocatoria/conv_detail.html', {'convocatorias': convocatorias})
+    #resultados = get_object_or_404(ResulConv, NroConv=pk)
+
+    #try:
+    num = pk
+    resultados = ResulConv.objects.all().filter(NroConv=pk)
+    #except ResulConv.DoesNotExist:
+    #    resultados = None
+
+    #resultados = ResulConv.objects.get(EvalTec=8.60)
+    return render(request, 'GestionConvocatoria/conv_resul.html', {'resultados': resultados})
 
 #def conv_new(request):
 #    form = ConvForm()

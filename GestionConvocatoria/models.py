@@ -126,6 +126,9 @@ class ResulConv(models.Model):
     def __str__(self):
         return str(self.CorrConv)
 
+    #def __iter__(self):
+    #    return iter( self.NroConv,
+    #             self.CorrConv )
 
 class ConvPers(models.Model):
     NroConv = models.OneToOneField('Convocatoria', db_column='NroConv', on_delete=models.CASCADE, primary_key=True, null=False)

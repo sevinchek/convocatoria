@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
 	<title></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/bootstrap.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/style.css' %}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
@@ -17,12 +17,9 @@
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
   </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-
 	<header class="container-fluid">
 		<div class="container">
 			<div class="row">
@@ -74,62 +71,16 @@
 									<th>Fig Gana</th>
 								</thead>
 								<tbody>
+									{% for res in resultados%}
 									<tr>
-										<td>1234</td>
-										<td>UNFV</td>
-										<td>120000</td>
-										<td>200000</td>
-										<td>Todo en orden</td>
+										<td>{{ res.NroConv }}</td>
+										<td>{{ res.Empresa }}</td>
+										<td>{{ res.EvalTec }}</td>
+										<td>{{ res.EvalEcon }}</td>
+										<td>{{ res.Observac }}</td>
 										<td>Si</td>
 									</tr>
-									<tr>
-										<td>1234</td>
-										<td>UNFV</td>
-										<td>120000</td>
-										<td>200000</td>
-										<td>Todo en orden</td>
-										<td>Si</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>UNFV</td>
-										<td>120000</td>
-										<td>200000</td>
-										<td>Todo en orden</td>
-										<td>Si</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>UNFV</td>
-										<td>120000</td>
-										<td>200000</td>
-										<td>Todo en orden</td>
-										<td>Si</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>UNFV</td>
-										<td>120000</td>
-										<td>200000</td>
-										<td>Todo en orden</td>
-										<td>Si</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>UNFV</td>
-										<td>120000</td>
-										<td>200000</td>
-										<td>Todo en orden</td>
-										<td>Si</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>UNFV</td>
-										<td>120000</td>
-										<td>200000</td>
-										<td>Todo en orden</td>
-										<td>Si</td>
-									</tr>
+									{% endfor %}
 								</tbody>
 							</table>
 							</div>
