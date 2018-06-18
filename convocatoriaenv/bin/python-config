@@ -1,4 +1,4 @@
-#!/home/kevin/Desktop/Software 2/convocatoriaenv/bin/python
+#!/home/felix/Desktop/convocatoria/convocatoriaenv/bin/python
 
 import sys
 import getopt

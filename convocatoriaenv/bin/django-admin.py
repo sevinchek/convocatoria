@@ -1,4 +1,4 @@
-#!/home/kevin/Desktop/Software 2/convocatoriaenv/bin/python3.5
+#!/home/felix/Desktop/convocatoria/convocatoriaenv/bin/python3.5
 from django.core import management
 
 if __name__ == "__main__":

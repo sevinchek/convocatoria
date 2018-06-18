@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/kevin/Desktop/Software 2/convocatoriaenv"
+VIRTUAL_ENV="/home/felix/Desktop/convocatoria/convocatoriaenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
