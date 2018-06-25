@@ -5,6 +5,7 @@ from .models import Cliente
 from .models import ObjContrat
 from .models import ResulConv
 from .forms import ConvForm
+from .forms import ResulConvForm
 from django.shortcuts import redirect
 
 # Create your views here.
@@ -29,11 +30,20 @@ def conv_detail(request, pk):
     #try:
     num = pk
     resultados = ResulConv.objects.all().filter(NroConv=pk)
+    if request.method == "POST":
+        form = ResulConvForm(request.POST)
+        if form.is_valid():
+                conv = form.save(commit=False)
+                conv.save()
+                return redirect('index')
+    else:
+        form = ResulConvForm()
+    return render(request, 'GestionConvocatoria/conv_resul.html', {'resultados': resultados, 'form': form})
     #except ResulConv.DoesNotExist:
     #    resultados = None
 
     #resultados = ResulConv.objects.get(EvalTec=8.60)
-    return render(request, 'GestionConvocatoria/conv_resul.html', {'resultados': resultados})
+    #return render(request, 'GestionConvocatoria/conv_resul.html', {'resultados': resultados})
 
 #def conv_new(request):
 #    form = ConvForm()
