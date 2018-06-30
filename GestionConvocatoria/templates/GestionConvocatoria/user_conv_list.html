@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
 	<title></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/bootstrap.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/style.css' %}">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +27,7 @@
 					<nav>
 						<ul>
 							<li><a href="">Proyectos</a></li>
-							<li><a href="" class="active">Convocatoria</a></li>
+							<li><a href="{% url 'index' %}" class="active">Convocatoria</a></li>
 							<li><a href="">Personal</a></li>
 							<li><a href="">Consultas</a></li>
 							<li><a href="">Ayuda</a></li>
@@ -96,104 +97,22 @@
 									<th>Ver Resultados</th>
 								</thead>
 								<tbody>
+									{% for conv in convocatorias%}
 									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-                    <td>
-                      <a href="#resul-conv" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-                    </td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
+										<td>{{ conv.NroConv }}</td>
+										<td>{{ conv.CodCli.CodCli.DesPersona }}</td>
+										<td>{{ conv.FecPubli }}</td>
+										<td>{{ conv.FecBuenaPro }}</td>
+										<td>{{ conv.Nomenclatura }}</td>
+										<td>{{ conv.FecReinicio }}</td>
+										<td>{{ conv.DescObjeto }}</td>
+										<td>{{ conv.CodSNIP }}</td>
+										<td>{{ conv.ValRefer }}</td>
 										<td>
-											<a href="#resul-conv" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
+											<a href="{% url 'user_conv_detail' pk=conv.NroConv %}" data-whatever="@mdo"><i class="far fa-list-alt"></i</a>
 										</td>
 									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#resul-conv" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#resul-conv" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#resul-conv" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#resul-conv" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-									</tr>
-									<tr>
-										<td>1234</td>
-										<td>Felix Frada</td>
-										<td>30/05/18</td>
-										<td>13/07/18</td>
-										<td>Convoca_012018</td>
-										<td>13/07/18</td>
-										<td>Construcion heart</td>
-										<td>ED_32_ALV</td>
-										<td>S/322.00</td>
-										<td>
-											<a href="#resul-conv" data-toggle="modal" data-whatever="@mdo"><i class="far fa-list-alt"></i></a>
-										</td>
-									</tr>
+									{% endfor %}
 								</tbody>
 							</table>
 							</div>

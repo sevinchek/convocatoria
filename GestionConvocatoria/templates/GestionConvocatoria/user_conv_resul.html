@@ -29,7 +29,7 @@
 					<nav>
 						<ul>
 							<li><a href="">Proyectos</a></li>
-							<li><a href="{% url 'indexadmin' %}" class="active">Convocatoria</a></li>
+							<li><a href="{% url 'index' %}" class="active">Convocatoria</a></li>
 							<li><a href="">Personal</a></li>
 							<li><a href="">Consultas</a></li>
 							<li><a href="">Ayuda</a></li>
@@ -52,13 +52,6 @@
 
 							<h2>RESULTADOS</h2>
 
-							<form>
-								<div class="form-row">
-									<div class="form-group col-md-11  text-right">
-										<label for="inputMounth">Añadir Postulante</label>
-										<a class="icono" href="#nuevo-post" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-plus-circle"></i></a>
-									</div>
-							</form>
 							<table class="table table-striped table-responsive">
 								<style>
 									thead th {
@@ -74,8 +67,6 @@
 									<th>Fig Gana</th>
 								</thead>
 								<tbody>
-									<form method="POST">
-										{% csrf_token %}
 									{% for res in resultados%}
 									<tr>
 										<td>{{ res.NroConv }}</td>
@@ -83,16 +74,7 @@
 										<td>{{ res.EvalTec }}</td>
 										<td>{{ res.EvalEcon }}</td>
 										<td>{{ res.Observac }}</td>
-
-
-
-											<td><input type="checkbox" name="recommendations" id="option{{res.CorrConv}}" value={{res.CorrConv}} /></td>
-											<td><label for="option{{res.CorrConv}}"><b>{{res.FlgGana}}</b></label><br/></td>
-
-
-
-
-
+										<td>{{ res.FlgGana }}</td>
 										{% if res.FlgGana == 'S' %}
 										<!--<td><input type="checkbox" value="{{ res.FlgGana }}" name="fooby[2][]" checked></label></td>-->
 										{% else %}
@@ -100,19 +82,8 @@
 										{% endif %}
 									</tr>
 									{% endfor %}
-
-									<button type="submit" name="mark_read">Mark read</button>
-									</form>
-
 								</tbody>
 							</table>
-
-
-
-
-
-
-
 
 							</div>
 						</div>
@@ -151,43 +122,6 @@ $("input:checkbox").on('click', function() {
 
 
 
-		<!-- AÑADIR POSTULANTES -->
-
-
-
-				<div class="modal fade" id="nuevo-post" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-lg">
-						<div class="modal-content">
-							<div class="modal-header">
-							</div>
-							<div class="modal-body">
-								<section class="container-fluid" id="form">
-									<div class="container">
-										<div class="row">
-											<h2>NUEVO POSTULANTE</h2>
-											<div class="col-lg-12 contenido_3">
-												<form method="POST" class="post-form">
-													{% csrf_token %}
-													{{ form.as_p }}
-													<div class="row ">
-														<div class="col-lg-12 text-right">
-
-															<button type="submit" class="save btn btn-default">Guardar</button>
-
-														</div>
-													</div>
-											</form>
-										</div>
-									</div>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
-				</div>
-				</div>
-
-		<!-- FIN AÑADIR POSTULANTE -->
 
 
     </body>

@@ -131,14 +131,14 @@ class ResulConv(models.Model):
     #             self.CorrConv )
 
 class ConvPers(models.Model):
-    NroConv = models.OneToOneField('Convocatoria', db_column='NroConv', on_delete=models.CASCADE, primary_key=True, null=False)
-    CodPers = models.ForeignKey('Persona', db_column='CodPers', on_delete=models.CASCADE, null=False)
+    CodPers = models.OneToOneField('Persona', db_column='CodPers', on_delete=models.CASCADE, primary_key=True, null=False)
+    NroConv = models.ForeignKey('Convocatoria', db_column='NroConv', on_delete=models.CASCADE, null=False)
     CodCargo = models.ForeignKey('Cargo', db_column='CodCargo', on_delete=models.CASCADE, null=False)
     Experiencia = models.CharField(null=False, max_length=500)
     ExpNroMeses = models.IntegerField(null=False)
     ExpNroDias = models.IntegerField(null=False)
     CorrProf = models.ForeignKey('PersProfesion', db_column='CorrProf', on_delete=models.CASCADE, null=False)
-    FlgCIPVigen = models.IntegerField(null=False)
+    FlgCIPVigen = models.CharField(null=False, max_length=1)
 
     def __str__(self):
-        return str(self.NroConv)
+        return str(self.CodPers)

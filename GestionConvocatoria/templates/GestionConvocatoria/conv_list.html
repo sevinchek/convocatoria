@@ -27,7 +27,7 @@
 					<nav>
 						<ul>
 							<li><a href="">Proyectos</a></li>
-							<li><a href="" class="active">Convocatoria</a></li>
+							<li><a href="{% url 'indexadmin' %}" class="active">Convocatoria</a></li>
 							<li><a href="">Personal</a></li>
 							<li><a href="">Consultas</a></li>
 							<li><a href="">Ayuda</a></li>
@@ -117,7 +117,7 @@
 											<a href="{% url 'conv_detail' pk=conv.NroConv %}" data-whatever="@mdo"><i class="far fa-list-alt"></i</a>
 										</td>
 										<td>
-											<a href="#ver-personal" data-toggle="modal" data-whatever="@mdo"><i class="fas fa-users"></i></a
+											<a href="{% url 'conv_pers' pk=conv.NroConv %}" data-whatever="@mdo"><i class="far fa-list-alt"></i</a>
 										</td>
 									</tr>
 									{% endfor %}
